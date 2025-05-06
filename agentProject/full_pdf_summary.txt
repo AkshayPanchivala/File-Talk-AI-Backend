@@ -1,0 +1,103 @@
+**Acids and Bases: Arrhenius, Bronsted-Lowry, and Lewis Theories**
+=================================================================
+
+### 3.3.1 Arrhenius Theory of Acids and Bases
+
+According to Arrhenius, acids and bases are defined as follows:
+
+* Acid: A substance that contains hydrogen and gives rise to H+ ions in aqueous solution.
+* Base: A substance that contains OH group and produces hydroxide ions (OH-) in aqueous solution.
+
+Examples of Arrhenius acids and bases include:
+
+* HCl (aq) → H+ (aq) + Cl- (aq)
+* NaOH (aq) → Na+ (aq) + OH- (aq)
+
+However, Arrhenius theory has limitations, such as not accounting for the basicity of NH3 and Na2CO3, which do not have OH groups.
+
+### 3.3.2 Bronsted-Lowry Theory
+
+The Bronsted-Lowry theory defines acids and bases as follows:
+
+* Acid: A substance that donates a proton (H+).
+* Base: A substance that accepts a proton (H+).
+
+Examples of Bronsted-Lowry acids and bases include:
+
+* HCl + NH3 → NH4+ + Cl-
+* HCl + H2O → H3O+ + Cl-
+
+All Bronsted bases are also Lewis bases, but not all Lewis acids are Bronsted acids.
+
+### 3.3.3 Lewis Theory
+
+The Lewis theory defines acids and bases as follows:
+
+* Acid: Any species that accepts a share in an electron pair.
+* Base: Any species that donates a share in an electron pair.
+
+Examples of Lewis acids and bases include:
+
+* BF3 + NH3 → F3B-NH3 (acid-base complex)
+* AlCl3 + Cl- → AlCl4- (acid-base complex)
+
+### 3.4 Ionization of Acids and Bases
+
+Acids and bases can be classified as strong or weak based on their extent of dissociation in water.
+
+**Strong Acids and Bases**
+
+* Strong acids, such as HCl, HNO3, and H2SO4, are almost completely dissociated in water.
+* Strong bases, such as NaOH and KOH, are also almost completely dissociated in water.
+
+**Weak Acids and Bases**
+
+* Weak acids, such as CH3COOH and HF, are partially dissociated in water.
+* Weak bases, such as NH4OH and Fe(OH)3, are also partially dissociated in water.
+
+### 3.4.1 Dissociation Constant of Weak Acids and Weak Bases
+
+The dissociation constant (Ka or Kb) of a weak acid or weak base is a measure of its ability to dissociate in water.
+
+* Ka = [H+][A-] / [HA] (for weak acids)
+* Kb = [B+][OH-] / [BOH] (for weak bases)
+
+### 3.4.2 Ostwald's Dilution Law
+
+Ostwald's dilution law relates the degree of dissociation of a weak acid or weak base to its concentration.
+
+* For weak acids: Ka = ∝2c / (1 - ∝) (where ∝ is the degree of dissociation)
+* For weak bases: Kb = ∝2c / (1 - ∝)
+
+### 3.5 Autoionization of Water
+
+Water can ionize to a small extent, resulting in the formation of hydronium (H3O+) and hydroxide (OH-) ions.
+
+* H2O (l) + H2O (l) → H3O+ (aq) + OH- (aq)
+* Kw = [H3O+][OH-] = 1.0 × 10-14 (at 298 K)
+
+### 3.6 pH Scale
+
+The pH scale is a logarithmic scale used to express the concentration of H3O+ ions in a solution.
+
+* pH = -log10[H3O+]
+* pOH = -log10[OH-]
+
+The pH scale ranges from 0 to 14, with pH 7 being neutral (neither acidic nor basic).
+
+### 3.6.1 Relationship Between pH and pOH
+
+The ionic product of water (Kw) is related to pH and pOH as follows:
+
+* pH + pOH = 14
+
+### 3.6.2 Acidity, Basicity, and Neutrality of Aqueous Solutions
+
+* Neutral solution: [H3O+] = [OH-] = 1.0 × 10-7 M (pH = 7)
+* Acidic solution: [H3O+] > [OH-] (pH < 7)
+* Basic solution: [H3O+] < [OH-] (pH > 7)
+
+Examples of acidity, basicity, and neutrality of aqueous solutions include:
+
+* 0.01 M HCl solution: [H3O+] = 1.0 × 10-2 M (pH = 2)
+* pH of a solution with [H3O+] = 7.586 × 10-4 M: pH = 3.12

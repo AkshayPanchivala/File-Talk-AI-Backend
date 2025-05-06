@@ -1,0 +1,4 @@
+requests
+PyMuPDF
+phidata
+django-cors-headers
