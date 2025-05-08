@@ -56,12 +56,6 @@ class questionAnswer():
         try:
             response = agent.run(question)
             answer = response.content.strip()
-
-            # with open(f"response-25-04-{number}.txt", "w") as file:
-            #     file.write(f"Question: {question}\n")
-            #     file.write(f"Answer: {answer}\n")
-            #     # file.write(answer + "\n---\n")
-
             if "I don't know" in answer or not answer:
                 print(f"🤷‍♂️ Question: {question}\n➡️ Fallback: I don't know the answer based on the PDF.\n")
                 return "I don't know the answer based on the PDF."
@@ -72,22 +66,3 @@ class questionAnswer():
             print(f"❌ Error processing question '{question}': {e}")
             return "Error processing the question."
 
-# === MAIN ===
-# if __name__ == "__main__":
-#     knowledge_base = questionAnswer.load_knowledge_base()
-#     agent = questionAnswer.initialize_agent(knowledge_base)
-
-#     questions = [
-#         "Give me The details of this Document.",
-#         "Give me Reliance stock proce and besed on the pdf what is the best time to buy it?",
-#         "Based on the pdf, what is the best time to buy a stock?",
-#         "Based on the Pdf Give me summery of the document.",
-#         "Give me Defanition Of the Cemicals How To make A Nacl.",
-#         "Can you give me haxagonal Cube and its properties?",
-#         "The normal boiling point of ethyl acetate is 77.06 0 C. A solution of 50 g of a nonvolatile solute in 150 g of ethyl acetate boils at 84.27 0 C. Evaluate the molar mass of solute if Kb for ethyl acetate is 2.77 0 C kg mol-1.",
-#         "How vapour pressure lowering is related to a rise in boiling point of solution?",
-#         "Give me the summery of the document.",
-#     ]
-
-#     for index, question in enumerate(questions):
-#         questionAnswer.ask_question(agent, question, index)

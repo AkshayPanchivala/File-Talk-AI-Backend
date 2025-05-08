@@ -77,12 +77,3 @@ class AnswerGenrate():
             print(f"❌ Error generating summary: {e}")
             exit(1)
 
-# # === Main logic ===
-# def main():
-#     if not os.path.exists(PDF_FILE):
-#         AnswerGenrate.download_pdf()
-#     text = AnswerGenrate.extract_text_from_pdf()
-#     AnswerGenrate.summarize_text_with_agent(text)
-
-# if __name__ == "__main__":
-#     main()
