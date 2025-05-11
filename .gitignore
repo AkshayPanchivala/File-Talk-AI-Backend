@@ -1,2 +1,59 @@
-venv
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
 .env
+*.env
+
+# Compiled files
+*.pyc
+*.pyo
+
+# Django migrations (optional)
+**/migrations/*.pyc
+**/migrations/__pycache__/
+
+# Virtual environments
+venv/
+env/
+
+# VSCode project settings
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Coverage reports
+htmlcov/
+.coverage
+.tox/
+.nox/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Test output
+*.log
+
+# SQLite (if used)
+db.sqlite3
+
+# Media/uploads (if any)
+media/
+uploads/
+
+# Node/npm (if using JS tooling)
+node_modules/
+*.log
+
+# Local settings (optional)
+local_settings.py

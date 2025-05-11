@@ -7,45 +7,56 @@ from phi.model.groq import Groq
 # === Set Groq API Key ===
 os.environ["GROQ_API_KEY"] = os.environ.get("groqApiKey")
 
-PDF_FILE = "book.pdf"  # ✅ Corrected from book.txt
+PDF_FILE = "book.pdf"  # Correct file extension
 
-# === Download the PDF ===
-class AnswerGenrate():
+class AnswerGenrate:
     @staticmethod
     def download_pdf(documentUrl):
-        url = documentUrl
-        response = requests.get(url)
-        with open(PDF_FILE, "wb") as f:
-            f.write(response.content)
-        print("✅ PDF downloaded.")
+        try:
+            response = requests.get(documentUrl, timeout=10)
+            response.raise_for_status()
+            with open(PDF_FILE, "wb") as f:
+                f.write(response.content)
+            return {"success": True, "data": "✅ PDF downloaded."}
+        except requests.exceptions.RequestException as e:
+            return {"success": False, "error": f"Error downloading PDF: {e}"}
+        except IOError as e:
+            return {"success": False, "error": f"Error writing PDF file: {e}"}
 
-    # === Extract text from specified pages ===
     @staticmethod
     def extract_text_from_pdf(min_page=1, max_page=5):
         try:
+            if not os.path.exists(PDF_FILE):
+                return {"success": False, "error": f"The file '{PDF_FILE}' does not exist."}
             doc = fitz.open(PDF_FILE)
-            full_text = ""
             total_pages = len(doc)
-
-            # Validate page bounds
             min_page = max(min_page, 1)
             max_page = min(max_page, total_pages)
+            if min_page > max_page:
+                return {"success": False, "error": "Minimum page number cannot be greater than maximum."}
+
+            full_text = ""
 
             for i in range(min_page - 1, max_page):
                 page = doc.load_page(i)
                 full_text += f"\n\n--- Page {i + 1} ---\n"
                 full_text += page.get_text()
-
-            print(f"📄 Extracted text from pages {min_page} to {max_page}.")
-            return full_text
+              
+            return {"success": True, "data": full_text}
+        except fitz.FileDataError as e:
+            return {"success": False, "error": f"Invalid PDF file: {e}"}
         except Exception as e:
-            print(f"❌ Error extracting PDF text: {e}")
-            exit(1)
+            return {"success": False, "error": f"Error extracting PDF text: {e}"}
 
-    # === Summarize the extracted text ===
     @staticmethod
     def summarize_text_with_agent(text):
         try:
+           
+            # print("Text content:", text.strip())  # Print first 1000 characters for debugging
+            # if not text or not text.strip():
+            #     print("Input text is empty or invalid for summarization.")
+            #     return {"success": False, "error": "Input text is empty or invalid for summarization."}
+
             agent = Agent(
                 name="Summarizer",
                 description="Summarizes a PDF document in a minimum of 8000 words.",
@@ -55,25 +66,27 @@ class AnswerGenrate():
                     "Use headings and bullet points where appropriate."
                 ],
                 model=Groq(id="llama3-70b-8192"),
-                markdown=True
+                markdown=True,
+                # debug_mode=True,
             )
 
             prompt = f"""
-    You are a professional summarizer AI. Summarize the following academic content in **at least 8000 words**. Ensure clarity, depth, and structure with sections, bullet points, and examples if relevant.
+You are a professional summarizer AI. Summarize the following academic content in **at least 8000 words**. Ensure clarity, depth, and structure with sections, bullet points, and examples if relevant.
 
-    {text}
-    """
+{text}
+"""      
             response = agent.run(prompt)
-            summary = response.content.strip()
+# If response is a dict, safely extract the 'content'
+            if isinstance(response, dict):
+                summary = response.get("content", "").strip()
+            else:
+                summary = getattr(response, "content", "").strip()
 
-            with open("full_pdf_summary.txt", "w", encoding="utf-8") as f:
-                f.write(summary)
+            if not summary:
+                return {"success": False, "error": "Empty response from the summarization agent."}
+            if not summary:
+                return {"success": False, "error": "Empty response from the summarization agent."}
 
-            print("✅ Summary generated.")
-            print(f"📄 Length: {len(summary)} characters")
-            print(summary)
-            return summary
+            return {"success": True, "data": summary}
         except Exception as e:
-            print(f"❌ Error generating summary: {e}")
-            exit(1)
-
+            return {"success": False, "error": f"Error generating summary: {e}"}
