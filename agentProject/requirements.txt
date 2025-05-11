@@ -10,6 +10,7 @@ PyMuPDF>=1.23.7
 # Phidata (assumed project-specific package)
 phidata
 djangorestframework>=3.12.0
+djangorestframework-simplejwt>=5.3.1
 
 # CORS headers support
 django-cors-headers>=4.3.1
