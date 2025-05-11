@@ -25,9 +25,9 @@ SECRET_KEY = 'django-insecure-tx+c48o$@)s^jccz-^bqfgu(my@uo!)9l3p6-9k21%rx=-(1cx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['file-talk-ai-backend.onrender.com']
 CORS_ALLOWED_ORIGINS = [
-    "https://example.com",
+    "https://file-talk-ai.onrender.com",
     "http://localhost:3000",
     "http://localhost:5173",
 ]
