@@ -1,0 +1,24 @@
+# Core framework
+Django>=4.2,<5.0
+
+# HTTP client
+requests>=2.31.0
+
+# PDF processing
+PyMuPDF>=1.23.7
+
+# Phidata (assumed project-specific package)
+phidata
+
+# CORS headers support
+django-cors-headers>=4.3.1
+
+# Production essentials
+gunicorn>=21.2.0               # WSGI server for production
+psycopg2-binary>=2.9.9         # PostgreSQL adapter
+python-dotenv>=1.0.1           # Load environment variables
+whitenoise>=6.6.0              # Serve static files in production
+dj-database-url>=2.1.0         # Parse database URLs
+
+# Optional security & performance enhancements
+django-environ>=0.11.2         # Better environment management (optional)
