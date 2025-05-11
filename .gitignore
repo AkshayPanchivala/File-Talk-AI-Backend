@@ -1,2 +1,27 @@
 venv
 .env
+*.env
+*.pyc
+*.py
+*.pyo
+*__pycache__
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+
+# VSCode settings
+.vscode/
+
+# macOS
+.DS_Store
