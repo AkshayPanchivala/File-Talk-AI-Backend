@@ -27,14 +27,21 @@ class questionAnswer():
     def initialize_agent(knowledge_base):
         try:
             agent = Agent(
-                description="""You are an AI assistant that answers questions using the content from a
-                 specific PDF document provided to you. Only respond with information that is directly available in the PDF. 
-                 If the answer cannot be found in the document, respond with: 'I'm sorry, but I couldn't find the answer to your question in the provided PDF document.""",
-                name="PDF Knowledge Agent",
-                role="Answer questions based on the content of the PDF.",
-                instructions=[
-                    "Only answer using content from the PDF.",
-                    "If the answer isn't in the PDF, respond with: 'I'm sorry, but I couldn't find the answer to your question in the provided PDF document.'"
+               description="""You are an AI assistant that answers questions **strictly** using the content from a 
+                        specific PDF document provided to you. Do not use external knowledge, do not infer or guess answers, and 
+                        do not use the internet or any pre-existing world knowledge. If the answer cannot be found explicitly in 
+                        the PDF, respond with: 'I'm sorry, but I couldn't find the answer to your question in the provided PDF document.'""",
+
+                    name="PDF-Only QA Agent",
+                    role="Answer user questions using only the content of a specific PDF file.",
+    
+                    instructions=[
+                        "Only use the PDF content to answer questions.",
+                        "Do not use external knowledge, AI inference, or assumptions.",
+                        "Do not perform internet searches or use general world knowledge.",
+                        "If the answer is not clearly in the PDF, respond with: 'I'm sorry, but I couldn't find the answer to your question in the provided PDF document.'",
+                        "Do not hallucinate or fabricate answers.",
+                        "If the question is unrelated to the PDF, use the fallback message."
                 ],
                 model=Groq(id="llama3-70b-8192"),  # Correct model ID for Groq
                 # knowledge_base=knowledge_base,  # Attach the knowledge base here
