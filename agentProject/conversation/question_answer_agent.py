@@ -55,7 +55,7 @@ class questionAnswer():
             response = agent.run(question)
             answer = response.content.strip()
             if "I'm sorry, but I couldn't find the answer to your question in the provided PDF document." in answer or not answer:
-                return "I'm sorry, but I couldn't find the answer to your question in the provided PDF document. the answer based on the PDF."
+                return "I'm sorry, but I couldn't find the answer to your question in the provided PDF document."
             else:
                 return answer
         except Exception as e:
