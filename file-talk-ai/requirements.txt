@@ -9,6 +9,7 @@ PyMuPDF>=1.23.7
 
 # Phidata (assumed project-specific package)
 phidata
+grok>=0.1.0
 
 # CORS headers support
 django-cors-headers>=4.3.1
@@ -22,3 +23,4 @@ dj-database-url>=2.1.0         # Parse database URLs
 
 # Optional security & performance enhancements
 django-environ>=0.11.2         # Better environment management (optional)
+djangorestframework>=3.12.0
