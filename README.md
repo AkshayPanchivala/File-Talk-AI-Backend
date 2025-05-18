@@ -50,7 +50,7 @@ pip install -r requirements.txt
 Create a `.env` file in the root of your project and add the following variables:
 
 ```env
-GROQ_API_KEY=your-groq-api-key
+groqApiKey=your-groq-api-key
 
 ```
 
