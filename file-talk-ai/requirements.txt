@@ -24,3 +24,5 @@ dj-database-url>=2.1.0         # Parse database URLs
 # Optional security & performance enhancements
 django-environ>=0.11.2         # Better environment management (optional)
 djangorestframework>=3.12.0
+rest_framework_simplejwt>=5.2.2
+django-extensions>=3.2.1       # Useful extensions for Django
