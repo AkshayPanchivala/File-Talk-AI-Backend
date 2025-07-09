@@ -30,7 +30,9 @@ CORS_ALLOWED_ORIGINS = [
     "https://file-talk-ai.onrender.com",
     "http://localhost:3000",
     "http://localhost:5173",
-    "https://filetalkai.vercel.app/"
+    "https://filetalkai.vercel.app/",
+    "https://portfoliobe-kcwu.onrender.com"
+    
 ]
 CORS_ALLOW_ALL_ORIGINS = True
 # Application definition
