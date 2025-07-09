@@ -5,8 +5,12 @@ from .question_answer_agent import questionAnswer
 from .summary_agent import AnswerGenrate
 from .questions_generate_agent import AgentMethods
 
-@api_view(['POST'])
+@api_view(['GET', 'POST'])
 def conversationHandler(request):
+    if request.method == 'GET':
+        return Response({
+            "message": "Chatbot conversation endpoint. Please send a POST request with action, question, and documenturl."
+        }, status=status.HTTP_200_OK)
     try:
         action = request.data.get('action')
         user_message = request.data.get('question')
